@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Livros</title>
+</head>
+<body>
+<h1>Livros</h1>
+<a th:href="@{/livros/novo}">Cadastrar livro</a>
+<a th:href="@{/autores/novo}">Cadastrar autor</a>
+<a th:href="@{/autores/listar}">Ver autores</a>
+
+<p th:if="${#lists.isEmpty(livros)}">Nenhum livro cadastrado.</p>
+<table th:unless="${#lists.isEmpty(livros)}">
+    <thead>
+    <tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>ISBN</th>
+        <th>Ação</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="livro : ${livros}">
+        <td th:text="${livro.titulo}">Título</td>
+        <td th:text="${livro.autor}">Autor</td>
+        <td th:text="${livro.isbn}">ISBN</td>
+        <td><a th:href="@{/livros/excluir/{id}(id=${livro.id})}">Excluir</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

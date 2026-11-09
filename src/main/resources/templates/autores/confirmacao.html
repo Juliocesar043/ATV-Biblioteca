@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Autor cadastrado</title>
+</head>
+<body>
+<h1>Autor cadastrado!</h1>
+<p>Nome: <span th:text="${autor.nome}">Autor</span></p>
+<p>Nacionalidade: <span th:text="${autor.nacionalidade}">Nacionalidade</span></p>
+<a th:href="@{/autores/listar}">Ver autores</a>
+</body>
+</html>

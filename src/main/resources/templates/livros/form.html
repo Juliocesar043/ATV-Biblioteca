@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar livro</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1>Cadastrar Livro</h1>
+<form th:object="${livro}" th:action="@{/livros}" method="post">
+    <label for="titulo">Título:</label>
+    <input id="titulo" type="text" th:field="*{titulo}">
+    <label for="autor">Autor:</label>
+    <input id="autor" type="text" th:field="*{autor}">
+    <label for="isbn">ISBN:</label>
+    <input id="isbn" type="text" th:field="*{isbn}">
+    <button type="submit">Cadastrar</button>
+</form>
+</body>
+</html>
