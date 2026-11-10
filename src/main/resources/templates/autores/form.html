@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar autor</title>
+</head>
+<body>
+<h1>Cadastrar Autor</h1>
+<form th:object="${autor}" th:action="@{/autores}" method="post">
+    <label for="nome">Nome:</label>
+    <input id="nome" type="text" th:field="*{nome}">
+    <label for="nacionalidade">Nacionalidade:</label>
+    <input id="nacionalidade" type="text" th:field="*{nacionalidade}">
+    <button type="submit">Cadastrar</button>
+</form>
+<a th:href="@{/autores/listar}">Ver autores</a>
+</body>
+</html>
